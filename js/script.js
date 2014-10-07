@@ -28,13 +28,40 @@ var shoppingTotals = function() {
 		$("#priceOutput").text("$ " + priceSum);
 };
 
+var validate = function() {
+	var enteredQuantity = $("#productQuantity").val();
+	var enteredName = $("#productName").val();
+	var enteredPrice = $("#productPrice").val();
+
+	if(enteredName === "") {
+		alert("Please enter an item in Item field");
+	} 
+	else if (!enteredQuantity.match(/^\d+$/)){
+		alert("Please enter a number in Quantity field");
+	}
+	
+	else {
+		addItems();
+	}
+};
+
 /*--- jQuery ---*/
 $(document).ready(function() {
 	$("#add").on("click", "#addButton", function() {
-		addItems();
+		validate();
 		$("#productName").val("");
 
 		shoppingTotals();
+	});
+
+	$("body").on("keypress", function(event) {
+		if(event.which == '13') {
+			event.preventDefault();
+			validate();
+			$("#productName").val("");
+
+			shoppingTotals();
+		}
 	});
 
 	$("table").on("click", ".xImage", function() {
