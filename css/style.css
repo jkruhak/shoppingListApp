@@ -1,0 +1,167 @@
+header, section, #inputFields, #quantity, #productQuantity, #product, #productName, #price, 
+#productPrice, #add, #tableFields, .imageCol, .quantityCol, .nameCol, .priceCol, footer,
+#quantityTotal, #priceTotal {
+	position: relative;
+	font-family: cursive;
+	/*border: 1px solid black;*/
+}
+
+/*--- HEADER PROPERTIES ---*/
+header {
+	width: 500px;
+	height: 75px;
+	margin: 0 auto;
+	margin-top: 15px;
+	font-size: 4em;
+	color: blue;
+	text-align: center;
+}
+
+/*--- INPUT PROPERTIES ---*/
+section {
+	width: 700px;
+	height: 600px;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+#inputFields {
+	margin: 0 auto;
+	width: 500px;
+	height: 50px;
+}
+
+#quantity, #product, #price, #add {
+	float: left;
+	text-align: center;
+}
+
+#quantity {
+	width: 80px;
+	height: 50px;
+}
+
+#productQuantity, #productPrice {
+	margin-top: 2px;
+	font-family: cursive;
+	width: 60px;
+	height: 20px;
+	text-align: center;
+}
+
+#product {
+	width: 280px;
+	height: 50px;
+}
+
+#productName {
+	margin-top: 2px;
+	font-family: cursive;
+	width: 260px;
+	height: 20px;
+}
+
+#price {
+	width: 80px;
+	height: 50px;
+}
+
+#add {
+	width: 50px;
+	height: 50px;
+}
+
+#add button {
+	margin-top: 20px;
+	width: 40px;
+	height: 20px;
+	color: blue;
+}
+
+/*--- TABLE PROPERTIES ---*/
+#tableFields {
+	width: 500px;
+	height: 527px;
+	margin: 0 auto;
+	margin-top: 20px;
+	overflow-y: scroll;
+}
+
+.imageCol, .priceCol {
+	width: 50px;
+	height: 25px;
+}
+
+.imageCol, .priceCol, .quantityCol, .checkImage, .xImage {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.quantityCol {
+	width: 50px;
+	height: 25px;
+}
+
+.nameCol {
+	width: 375px;
+	height: 25px;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+
+#tableFields img {
+	width: 20px;
+	height: 20px;
+}
+
+/*--- FOOTER PROPERTIES ---*/
+footer {
+	border: 1px solid black;
+	width: 700px;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+#quantityTotal {
+	float: left;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#quantityOutput {
+	float: left;
+	display: inline-block;
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+#priceTotal {
+	float: right;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	text-align: center;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+#priceOutput {
+	float: right;
+	display: inline-block;
+	width: 75px;
+	height: 40px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+/*--- jQuery PROPERTIESS ---*/
+.gotit {
+	text-decoration: line-through;
+	color: blue;
+}
