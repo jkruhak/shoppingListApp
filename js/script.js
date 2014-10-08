@@ -1,8 +1,8 @@
 var addItems = function() {
 	var enteredQuantity = $("#productQuantity").val();
 	var enteredName = $("#productName").val();
-	var enteredPrice = ($("#productPrice").val())*(enteredQuantity);
-	var priceRound = enteredPrice.toFixed(2);
+	var enteredPrice = $("#productPrice").val();
+	
 
 	if(enteredName === "") {
 		alert("Please enter an item in Item field");
@@ -10,7 +10,13 @@ var addItems = function() {
 	else if (!enteredQuantity.match(/^\d+$/)){
 		alert("Please enter a number in Quantity field");
 	}
+	else if (!enteredPrice.match(/^\d+(\.\d{0,2})?$/)){
+		alert("Please enter a number in Price field");
+	}
 	else {
+		var enteredTotal = enteredPrice*enteredQuantity;
+		var priceRound = enteredTotal.toFixed(2);
+
 		$("table").append("<tr><td class='imageCol'><img src='images/checkMark.png' class='checkImage'><img src='images/xMark.png' class='xImage'></td><td class='quantityCol'>"+enteredQuantity+"</td><td class='nameCol'>"+enteredName+"</td><td class='priceCol'>"+priceRound+"</td></tr>");
 	}
 };
