@@ -17,7 +17,7 @@ var addItems = function() {
 		var enteredTotal = enteredPrice*enteredQuantity;
 		var priceRound = enteredTotal.toFixed(2);
 
-		$("table").append("<tr><td class='imageCol'><img src='images/checkMark.png' class='checkImage'><img src='images/xMark.png' class='xImage'></td><td class='quantityCol'>"+enteredQuantity+"</td><td class='nameCol'>"+enteredName+"</td><td class='priceCol'>"+priceRound+"</td></tr>");
+		$("table").append("<tr><td class='imageCol'><img src='images/checkMark.png' class='checkImage'>" + " " + "<img src='images/xMark.png' class='xImage'></td><td class='quantityCol'>"+enteredQuantity+"</td><td class='nameCol'>"+enteredName+"</td><td class='priceCol'>"+priceRound+"</td></tr>");
 	}
 };
 
