@@ -1,5 +1,5 @@
 header, section, #inputFields, #quantity, #productQuantity, #product, #productName, #price, 
-#productPrice, #add, #tableFields, .imageCol, .quantityCol, .nameCol, .priceCol, footer,
+#productPrice, #add, #listFields, .imageCol, .quantityCol, .nameCol, .priceCol, footer,
 #quantityTotal, #priceTotal {
 	position: relative;
 	font-family: cursive;
@@ -49,6 +49,10 @@ section {
 	text-align: center;
 }
 
+.imageCol, .quantityCol, .nameCol, .priceCol {
+	display: inline-block;
+}
+
 #product {
 	width: 280px;
 	height: 50px;
@@ -78,8 +82,8 @@ section {
 	color: blue;
 }
 
-/*--- TABLE PROPERTIES ---*/
-#tableFields {
+/*--- LIST PROPERTIES ---*/
+#listFields {
 	width: 500px;
 	height: 527px;
 	margin: 0 auto;
@@ -103,13 +107,13 @@ section {
 }
 
 .nameCol {
-	width: 375px;
+	width: 315px;
 	height: 25px;
 	vertical-align: middle;
 	padding-left: 5px;
 }
 
-#tableFields img {
+#listFields img {
 	width: 20px;
 	height: 20px;
 }
@@ -125,7 +129,7 @@ footer {
 
 #quantityTotal, #priceTotal {
 	display: inline-block;
-	width: 100px;
+	width: 90px;
 	height: 40px;
 	text-align: center;
 	font-weight: bold;
@@ -152,8 +156,9 @@ footer {
 	color: blue;
 }
 
-/*--- jQuery PROPERTIESS ---*/
+/*--- jQuery PROPERTIES ---*/
 .gotit {
-	text-decoration: line-through;
+	background-image: none;
 	color: blue;
+	text-decoration: line-through;
 }

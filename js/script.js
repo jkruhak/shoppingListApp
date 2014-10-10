@@ -17,7 +17,9 @@ var addItems = function() {
 		var enteredTotal = enteredPrice*enteredQuantity;
 		var priceRound = enteredTotal.toFixed(2);
 
-		$("table").append("<tr><td class='imageCol'><img src='images/checkMark.png' class='checkImage'>" + " " + "<img src='images/xMark.png' class='xImage'></td><td class='quantityCol'>"+enteredQuantity+"</td><td class='nameCol'>"+enteredName+"</td><td class='priceCol'>"+priceRound+"</td></tr>");
+		$("#shoppingList").append("<li class='columnList'><ul class='listComplete'><li class='imageCol'><img src='images/checkMark.png' class='checkImage'>" + " " + "<img src='images/xMark.png' class='xImage'></li><li class='quantityCol'>" + enteredQuantity + "</li><li class='nameCol'>" + enteredName + "</li><li class='priceCol'>" + priceRound + "</li></ul></li>");
+
+
 	}
 };
 
@@ -26,14 +28,14 @@ var shoppingTotals = function() {
 	var totalPrice = 0;
 
 	//quantity total
-		$("table tr").children("td:nth-child(2)").each(function() {
+		$(".listComplete").children(".quantityCol").each(function() {
 			quantitySum += parseInt($(this).html());
 		});
 
 		$("#quantityOutput").text(quantitySum);
 
 	//price total
-		$("table tr").children("td:nth-child(4)").each(function() {
+		$(".listComplete").children(".priceCol").each(function() {
 			totalPrice += parseFloat($(this).html());
 		});
 
@@ -46,7 +48,9 @@ var shoppingTotals = function() {
 $(document).ready(function() {
 	$("#add").on("click", "#addButton", function() {
 		addItems();
+		$("#productQuantity").val("1");
 		$("#productName").val("");
+		$("#productPrice").val("0.00");
 
 		shoppingTotals();
 	});
@@ -55,22 +59,20 @@ $(document).ready(function() {
 		if(event.which == '13') {
 			event.preventDefault();
 			addItems();
+			$("#productQuantity").val("1");
 			$("#productName").val("");
+			$("#productPrice").val("0.00");
 
 			shoppingTotals();
 		}
 	});
 
-	$("table").on("click", ".xImage", function() {
-		$(this).closest("tr").remove();
+	$("#shoppingList").on("click", ".xImage", function() {
+		$(this).closest(".columnList").remove();
 		shoppingTotals();
 	});
 
-	$("table").on("click", ".checkImage", function() {
-		$(this).closest("tr").toggleClass("gotit");
-		
-		if($("table tr").hasClass("gotit")) {
-			shoppingTotals();
-		}
+	$("#listFields").on("click", ".checkImage", function() {
+		$(this).closest(".columnList").toggleClass("gotit");
 	});
 });
