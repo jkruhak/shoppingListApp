@@ -1,5 +1,5 @@
-header, section, #inputFields, #quantity, #productQuantity, #product, #productName, #price, 
-#productPrice, #add, #listFields, .imageCol, .quantityCol, .nameCol, .priceCol, footer,
+header, #main, #inputFields, #quantity, #productQuantity, #product, #productName, #price, 
+#productPrice, #add, #listFields, .checkCol, .removeCol, .quantityCol, .nameCol, .priceCol, #listTotals,
 #quantityTotal, #priceTotal {
 	position: relative;
 	font-family: cursive;
@@ -18,7 +18,7 @@ header {
 }
 
 /*--- INPUT PROPERTIES ---*/
-section {
+#main {
 	width: 700px;
 	height: 600px;
 	margin: 0 auto;
@@ -49,7 +49,7 @@ section {
 	text-align: center;
 }
 
-.imageCol, .quantityCol, .nameCol, .priceCol {
+.checkCol, .removeCol, .quantityCol, .nameCol, .priceCol {
 	display: inline-block;
 }
 
@@ -88,17 +88,40 @@ section {
 	height: 527px;
 	margin: 0 auto;
 	margin-top: 20px;
-	overflow-y: scroll;
+	overflow: auto;
 }
 
-.imageCol, .priceCol {
+.priceCol {
 	width: 50px;
 	height: 25px;
 }
 
-.imageCol, .priceCol, .quantityCol, .checkImage, .xImage {
+.checkCol, .removeCol {
+	width: 25px;
+	height: 25px;
+} 
+
+.checkCol, .removeCol, .priceCol, .quantityCol, .checkImage, .xImage {
 	vertical-align: middle;
 	text-align: center;
+}
+
+.checkImage {
+	background-image: url('../images/checkMark.png');
+	background-repeat: no-repeat;
+	background-size: 20px;
+}
+
+.uncheckImage {
+	background-image: url('../images/uncheckMark.png');
+	background-repeat: no-repeat;
+	background-size: 20px;
+}
+
+.xImage {
+	background-image: url('../images/xMark.png');
+	background-repeat: no-repeat;
+	background-size: 20px;
 }
 
 .quantityCol {
@@ -118,8 +141,8 @@ section {
 	height: 20px;
 }
 
-/*--- FOOTER PROPERTIES ---*/
-footer {
+/*--- TOTALS PROPERTIES ---*/
+#listTotals {
 	border: 1px solid black;
 	width: 700px;
 	height: 40px;
@@ -158,7 +181,6 @@ footer {
 
 /*--- jQuery PROPERTIES ---*/
 .gotit {
-	background-image: none;
 	color: blue;
 	text-decoration: line-through;
 }

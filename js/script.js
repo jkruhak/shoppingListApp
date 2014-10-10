@@ -17,10 +17,10 @@ var addItems = function() {
 		var enteredTotal = enteredPrice*enteredQuantity;
 		var priceRound = enteredTotal.toFixed(2);
 
-		$("#shoppingList").append("<li class='columnList'><ul class='listComplete'><li class='imageCol'><img src='images/checkMark.png' class='checkImage'>" + " " + "<img src='images/xMark.png' class='xImage'></li><li class='quantityCol'>" + enteredQuantity + "</li><li class='nameCol'>" + enteredName + "</li><li class='priceCol'>" + priceRound + "</li></ul></li>");
-
-
-	}
+		$("#shoppingList").append("<li class='columnList'><ul class='listComplete'><li class='checkCol'><li class='removeCol'></li><li class='quantityCol'>" + enteredQuantity + "</li><li class='nameCol'>" + enteredName + "</li><li class='priceCol'>" + priceRound + "</li></ul></li>");
+		$(".checkCol").addClass("uncheckImage");
+		$(".removeCol").addClass("xImage");
+	}	
 };
 
 var shoppingTotals = function() {
@@ -72,7 +72,17 @@ $(document).ready(function() {
 		shoppingTotals();
 	});
 
-	$("#listFields").on("click", ".checkImage", function() {
-		$(this).closest(".columnList").toggleClass("gotit");
+	$("#shoppingList").on("click", ".uncheckImage", function() {
+		$(this).closest(".checkCol").removeClass("uncheckImage").addClass("checkImage");
+		$(this).closest(".listComplete").find(".quantityCol").addClass("gotit");
+		$(this).closest(".listComplete").find(".nameCol").addClass("gotit");
+		$(this).closest(".listComplete").find(".priceCol").addClass("gotit");
+	});
+
+	$("#shoppingList").on("click", ".checkImage", function() {
+		$(this).closest(".checkCol").removeClass("checkImage").addClass("uncheckImage");
+		$(this).closest(".listComplete").find(".quantityCol").removeClass("gotit");
+		$(this).closest(".listComplete").find(".nameCol").removeClass("gotit");
+		$(this).closest(".listComplete").find(".priceCol").removeClass("gotit");
 	});
 });
