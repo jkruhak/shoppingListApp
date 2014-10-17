@@ -18,6 +18,10 @@ header {
 }
 
 /*--- INPUT PROPERTIES ---*/
+body {
+	background-color: white;
+}
+
 #main {
 	width: 700px;
 	height: 600px;
